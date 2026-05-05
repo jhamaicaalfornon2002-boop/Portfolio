@@ -54,7 +54,7 @@ $clients   = get_field( 'about_clients_count' );
                 <?php endif; ?>
 
                 <?php if ( $resume ) : ?>
-                    <a href="<?php echo esc_url( $resume ); ?>" class="btn btn--primary" target="_blank" rel="noopener">
+                    <a href="<?php echo esc_url( $resume ); ?>" class="btn btn--primary" download>
                         Download Resume
                     </a>
                 <?php endif; ?>

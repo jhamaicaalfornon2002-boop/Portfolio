@@ -16,41 +16,33 @@ $gallery      = devportfolio_get_work_gallery();
 $categories   = get_the_terms( get_the_ID(), 'work_category' );
 ?>
 
-<article class="section section--single-work">
-    <div class="container">
-        <a href="<?php echo get_post_type_archive_link( 'work' ); ?>" class="back-link">&larr; Back to Works</a>
+<article class="alfornon-section">
+    <div class="alfornon-container">
+        <a href="<?php echo get_post_type_archive_link( 'work' ); ?>" class="alfornon-mini-link">&larr; Back to Works</a>
 
-        <header class="single-work__header">
-            <h1 class="single-work__title"><?php the_title(); ?></h1>
-            <div class="single-work__meta">
-                <?php if ( $client ) : ?>
-                    <span><strong>Client:</strong> <?php echo esc_html( $client ); ?></span>
-                <?php endif; ?>
-                <?php if ( $date ) : ?>
-                    <span><strong>Date:</strong> <?php echo esc_html( $date ); ?></span>
-                <?php endif; ?>
-                <?php if ( $categories && ! is_wp_error( $categories ) ) : ?>
-                    <span><strong>Category:</strong> <?php echo esc_html( $categories[0]->name ); ?></span>
-                <?php endif; ?>
-            </div>
+        <header class="alfornon-section__head reveal-on-scroll">
+            <h2><?php the_title(); ?></h2>
+            <span class="alfornon-rule"></span>
         </header>
 
         <?php if ( has_post_thumbnail() ) : ?>
-            <div class="single-work__featured">
-                <?php the_post_thumbnail( 'portfolio-full' ); ?>
+            <div class="alfornon-card-grid" style="grid-template-columns: 1fr; margin-bottom: 56px;">
+                <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--alfornon-shadow);">
+                    <?php the_post_thumbnail( 'portfolio-full' ); ?>
+                </div>
             </div>
         <?php endif; ?>
 
-        <div class="single-work__grid">
-            <div class="single-work__content">
+        <div class="alfornon-contact-grid" style="align-items: start;">
+            <div class="alfornon-richtext">
                 <?php the_content(); ?>
             </div>
 
-            <aside class="single-work__sidebar">
+            <aside style="min-width: 280px;">
                 <?php if ( $technologies ) : ?>
-                    <div class="sidebar-block">
-                        <h4>Technologies</h4>
-                        <div class="tech-tags">
+                    <div class="skill-card" style="margin-bottom: 24px;">
+                        <h4 style="margin: 0 0 16px; color: var(--alfornon-teal); font-size: 1.1rem; font-weight: 900;">Technologies</h4>
+                        <div class="work-card__tech">
                             <?php foreach ( $technologies as $tech ) : ?>
                                 <span class="tech-tag"><?php echo esc_html( $tech ); ?></span>
                             <?php endforeach; ?>
@@ -58,42 +50,48 @@ $categories   = get_the_terms( get_the_ID(), 'work_category' );
                     </div>
                 <?php endif; ?>
 
-                <div class="sidebar-block">
-                    <h4>Links</h4>
-                    <?php if ( $live_url ) : ?>
-                        <a href="<?php echo esc_url( $live_url ); ?>" class="btn btn--primary btn--full" target="_blank" rel="noopener">View Live Site</a>
-                    <?php endif; ?>
-                    <?php if ( $github_url ) : ?>
-                        <a href="<?php echo esc_url( $github_url ); ?>" class="btn btn--outline btn--full" target="_blank" rel="noopener">View on GitHub</a>
-                    <?php endif; ?>
+                <div class="skill-card">
+                    <h4 style="margin: 0 0 16px; color: var(--alfornon-teal); font-size: 1.1rem; font-weight: 900;">Links</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <?php if ( $live_url ) : ?>
+                            <a href="<?php echo esc_url( $live_url ); ?>" class="alfornon-btn alfornon-btn--primary" target="_blank" rel="noopener">View Live Site</a>
+                        <?php endif; ?>
+                        <?php if ( $github_url ) : ?>
+                            <a href="<?php echo esc_url( $github_url ); ?>" class="alfornon-btn alfornon-btn--outline" target="_blank" rel="noopener">View on GitHub</a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </aside>
         </div>
 
         <?php if ( $gallery ) : ?>
-            <div class="single-work__gallery">
-                <h3>Project Gallery</h3>
-                <div class="gallery-grid">
+            <div style="margin-top: 72px;">
+                <header class="alfornon-section__head" style="margin-bottom: 48px;">
+                    <h3 style="margin: 0; color: var(--alfornon-teal); font-size: 2.5rem; font-weight: 900;">Project Gallery</h3>
+                </header>
+                <div class="alfornon-card-grid">
                     <?php foreach ( $gallery as $img ) : ?>
-                        <div class="gallery-item">
-                            <img src="<?php echo esc_url( $img['sizes']['portfolio-full'] ?? $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>">
+                        <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--alfornon-shadow);">
+                            <img src="<?php echo esc_url( $img['sizes']['portfolio-full'] ?? $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" style="width: 100%; height: auto; display: block;">
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         <?php endif; ?>
 
-        <nav class="post-navigation">
+        <nav class="alfornon-section__cta" style="margin-top: 72px;">
             <?php
             $prev = get_previous_post();
             $next = get_next_post();
             ?>
-            <?php if ( $prev ) : ?>
-                <a href="<?php echo get_permalink( $prev ); ?>" class="nav-prev">&larr; <?php echo esc_html( $prev->post_title ); ?></a>
-            <?php endif; ?>
-            <?php if ( $next ) : ?>
-                <a href="<?php echo get_permalink( $next ); ?>" class="nav-next"><?php echo esc_html( $next->post_title ); ?> &rarr;</a>
-            <?php endif; ?>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <?php if ( $prev ) : ?>
+                    <a href="<?php echo get_permalink( $prev ); ?>" class="alfornon-btn alfornon-btn--outline">&larr; <?php echo esc_html( $prev->post_title ); ?></a>
+                <?php endif; ?>
+                <?php if ( $next ) : ?>
+                    <a href="<?php echo get_permalink( $next ); ?>" class="alfornon-btn alfornon-btn--outline"><?php echo esc_html( $next->post_title ); ?> &rarr;</a>
+                <?php endif; ?>
+            </div>
         </nav>
     </div>
 </article>

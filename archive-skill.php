@@ -13,10 +13,13 @@ $skill_cats = get_terms( array(
 ) );
 ?>
 
-<section class="section section--archive">
-    <div class="container">
-        <h1 class="section__title">Skills & Tools</h1>
-        <p class="section__subtitle">Technologies and tools I work with</p>
+<section class="alfornon-section alfornon-section--skills">
+    <div class="alfornon-container alfornon-container--narrow">
+        <header class="alfornon-section__head reveal-on-scroll">
+            <h2><?php echo esc_html( get_field( 'skills_archive_title', 'option' ) ?: 'Skills & Tools' ); ?></h2>
+            <span class="alfornon-rule"></span>
+            <p><?php echo esc_html( get_field( 'skills_archive_subtitle', 'option' ) ?: 'Technologies and tools I work with' ); ?></p>
+        </header>
 
         <?php if ( $skill_cats && ! is_wp_error( $skill_cats ) ) : ?>
             <?php foreach ( $skill_cats as $cat ) : ?>
@@ -55,7 +58,7 @@ $skill_cats = get_terms( array(
                     <?php endwhile; ?>
                 </div>
             <?php else : ?>
-                <p class="no-posts">No skills added yet.</p>
+                <p class="alfornon-empty reveal-on-scroll">No skills added yet.</p>
             <?php endif; ?>
         <?php endif; ?>
     </div>

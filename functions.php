@@ -19,3 +19,4 @@ require_once DEV_PORTFOLIO_DIR . '/inc/theme-setup.php';
 require_once DEV_PORTFOLIO_DIR . '/inc/custom-post-types.php';
 require_once DEV_PORTFOLIO_DIR . '/inc/enqueue.php';
 require_once DEV_PORTFOLIO_DIR . '/inc/helpers.php';
+require_once DEV_PORTFOLIO_DIR . '/inc/acf.php';
