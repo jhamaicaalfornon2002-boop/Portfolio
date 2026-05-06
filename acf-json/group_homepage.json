@@ -127,40 +127,81 @@
         },
         {
             "key": "field_hero_cta_text",
-            "label": "CTA Button Text",
-            "name": "hero_cta_text",
+            "label": "CTA1 Button Text",
+            "name": "hero_cta1_text",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "View My Work",
+            "default_value": "Explore My Work",
             "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69faec232c09f",
+            "label": "CTA2 Button Text",
+            "name": "hero_cta2_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Let's Connect",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
             "key": "field_hero_cta_link",
-            "label": "CTA Button Link",
-            "name": "hero_cta_link",
+            "label": "CTA1 Button Link",
+            "name": "hero_cta1_link",
             "aria-label": "",
             "type": "url",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "placeholder": "#works",
-            "default_value": ""
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "#works"
+        },
+        {
+            "key": "field_69faec518abaf",
+            "label": "CTA2 Button Link",
+            "name": "hero_cta2_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "#works"
         },
         {
             "key": "field_socials_tab",
@@ -249,6 +290,32 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_69faf794b2c6a",
+            "label": "Logo",
+            "name": "hero_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -265,10 +332,12 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772700173
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1778055129
 }

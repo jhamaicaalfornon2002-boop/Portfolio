@@ -185,12 +185,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": true,
     "description": "",
-    "show_in_rest": 0,
+    "show_in_rest": false,
     "display_title": "",
-    "allow_ai_access": false,
-    "ai_description": "",
-    "modified": 1777973248
+    "modified": 1772700181
 }

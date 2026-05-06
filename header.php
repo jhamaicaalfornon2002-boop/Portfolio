@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+// ─── ACF Logo ───────────────────────────────────────────────
+$logo = get_field('hero_logo');
+?>
+
 <header class="site-header" id="site-header">
-    <div class="alfornon-container">
-        <div class="alfornon-nav-wrapper">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo alfornon-brand" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                <span class="alfornon-logo-frame">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Logo.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="alfornon-logo" />
+    <div class="container">
+
+        <!-- LOGO -->
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
+
+            <?php if ($logo) : ?>
+                <img src="<?php echo esc_url($logo['url']); ?>" 
+                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                     class="site-logo__img">
+
+            <?php else : ?>
+                <span class="site-logo__text">
+                    <?php bloginfo('name'); ?>
                 </span>
-            </a>
+            <?php endif; ?>
 
-            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="<?php esc_attr_e( 'Toggle navigation', 'dev-portfolio' ); ?>" aria-controls="site-nav" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+        </a>
 
-            <nav class="site-nav alfornon-nav" id="site-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'dev-portfolio' ); ?>">
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'primary',
-                    'container'      => false,
-                    'menu_class'     => 'nav-list',
-                    'fallback_cb'    => 'devportfolio_primary_menu_fallback',
-                    'depth'          => 1,
-                    'link_before'    => '<span class="nav-label">',
-                    'link_after'     => '</span>',
-                ) );
-                ?>
-            </nav>
-        </div>
+        <!-- MOBILE TOGGLE -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVIGATION -->
+        <nav class="site-nav" id="site-nav">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container'      => false,
+                'menu_class'     => 'nav-list',
+                'fallback_cb'    => false,
+                'depth'          => 1,
+            ));
+            ?>
+        </nav>
+
     </div>
 </header>
 
