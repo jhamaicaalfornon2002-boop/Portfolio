@@ -282,3 +282,7 @@ Since the free ACF plugin doesn't include the Repeater field:
 - Google Fonts integration (Inter + Fira Code)
 - CSS custom properties for easy theming
 - Screenshot included for theme preview
+
+
+## Figma link
+- https://www.figma.com/make/hMFVeDlz8ZvRbvQDwSPOc7/My-Portfolio?code-node-id=0-9&p=f&t=QERLPw1PyezasRYt-0&fullscreen=1
