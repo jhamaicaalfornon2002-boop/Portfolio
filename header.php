@@ -11,27 +11,29 @@
 
 <?php
 // ─── ACF Logo ───────────────────────────────────────────────
-$logo = get_field('hero_logo');
+// Get the front page ID to fetch logo from there consistently
+$front_page_id = get_option('page_on_front');
+$logo = get_field('hero_logo', $front_page_id);
 ?>
 
 <header class="site-header" id="site-header">
     <div class="container">
 
         <!-- LOGO -->
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
 
-            <?php if ($logo) : ?>
-                <img src="<?php echo esc_url($logo['url']); ?>" 
-                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
-                     class="site-logo__img">
+                <?php if ($logo) : ?>
+                    <img src="<?php echo esc_url($logo['url']); ?>" 
+                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                        class="site-logo__img">
 
-            <?php else : ?>
-                <span class="site-logo__text">
-                    <?php bloginfo('name'); ?>
-                </span>
-            <?php endif; ?>
+                <?php else : ?>
+                    <span class="site-logo__text">
+                        <?php bloginfo('name'); ?>
+                    </span>
+                <?php endif; ?>
 
-        </a>
+            </a>
 
         <!-- MOBILE TOGGLE -->
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">

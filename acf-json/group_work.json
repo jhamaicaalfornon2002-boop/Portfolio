@@ -121,6 +121,24 @@
             "mime_types": ""
         },
         {
+            "key": "field_69fd3f8f4dd0d",
+            "label": "Hero Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_work_gallery_2",
             "label": "Gallery Image 2",
             "name": "work_gallery_2",
@@ -169,6 +187,32 @@
             "max_height": 0,
             "max_size": 0,
             "mime_types": ""
+        },
+        {
+            "key": "field_69fd3fb4837a0",
+            "label": "Logo",
+            "name": "hero_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -185,10 +229,12 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772700181
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1778204889
 }
